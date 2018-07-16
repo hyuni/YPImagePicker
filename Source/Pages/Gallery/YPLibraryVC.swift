@@ -62,6 +62,12 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         refreshMediaRequest()
         
         v.assetViewContainer.multipleSelectionButton.isHidden = !(YPConfig.library.maxNumberOfItems > 1)
+        
+        if (YPConfig.library.maxNumberOfItems > 1) {
+            multipleSelectionEnabled = true
+            v.assetViewContainer.setMultipleSelectionMode(on: true)
+        }
+        
         v.maxNumberWarningLabel.text = String(format: YPConfig.wordings.warningMaxItemsLimit, YPConfig.library.maxNumberOfItems)
     }
     

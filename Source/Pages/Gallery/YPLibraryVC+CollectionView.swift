@@ -137,9 +137,9 @@ extension YPLibraryVC: UICollectionViewDelegate {
         currentlySelectedIndex = indexPath.row
 
         // If this is the only selected cell, do not deselect.
-        if selection.count == 1 && selection.first?.index == indexPath.row {
-            return
-        }
+//        if selection.count == 1 && selection.first?.index == indexPath.row {
+//            return
+//        }
         
         changeAsset(mediaManager.fetchResult[indexPath.row])
         panGestureHelper.resetToOriginalState()
