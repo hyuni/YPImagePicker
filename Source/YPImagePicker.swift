@@ -63,8 +63,37 @@ public class YPImagePicker: UINavigationController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    var prevOrientation: UIInterfaceOrientation = .portrait
+
+    func setDevicePortraitOrientation() {
+        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+        UIApplication.shared.setStatusBarHidden(false, with: .fade)
+        UIApplication.shared.statusBarOrientation = .portrait
+    }
+    
+    func setDeviceLandscapeOrientation() {
+        UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
+        UIApplication.shared.setStatusBarHidden(false, with: .fade)
+        UIApplication.shared.statusBarOrientation = .landscapeRight
+        
+    }
+    
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if (prevOrientation != .portrait) {
+            self.setDeviceLandscapeOrientation()
+        }
+    }
+
     override public func viewDidLoad() {
         super.viewDidLoad()
+        
+        prevOrientation = UIApplication.shared.statusBarOrientation
+        if (prevOrientation != .portrait) {
+            self.setDevicePortraitOrientation()
+        }
+        
         picker.didClose = { [weak self] in
             self?.didCancel?()
             self?._didFinishPicking?([], true)
