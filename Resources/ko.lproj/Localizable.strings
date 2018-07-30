@@ -4,14 +4,14 @@
 "YPImagePickerCrop" = "Crop";
 "YPImagePickerDone" = "완료";
 "YPImagePickerFilter" = "Filter";
-"YPImagePickerLibrary" = "Library";
+"YPImagePickerLibrary" = "사진";
 "YPImagePickerNext" = "다음";
 "YPImagePickerOk" = "확인";
 "YPImagePickerPermissionDeniedPopupCancel" = "취소";
 "YPImagePickerPermissionDeniedPopupGrantPermission" = "Grant Permission";
 "YPImagePickerPermissionDeniedPopupMessage" = "Please allow access";
 "YPImagePickerPermissionDeniedPopupTitle" = "Permission denied";
-"YPImagePickerPhoto" = "사진";
+"YPImagePickerPhoto" = "카메라";
 "YPImagePickerProcessing" = "진행중..";
 "YPImagePickerSave" = "저장";
 "YPImagePickerTrim" = "Trim";
